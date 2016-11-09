@@ -1,0 +1,310 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2135A7E21DD38ACA003E5573 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2135A7E11DD38ACA003E5573 /* AppDelegate.swift */; };
+		2135A7E41DD38ACA003E5573 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2135A7E31DD38ACA003E5573 /* ViewController.swift */; };
+		2135A7E71DD38ACA003E5573 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2135A7E51DD38ACA003E5573 /* Main.storyboard */; };
+		2135A7EA1DD38ACA003E5573 /* Sky_Well_Test_Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2135A7E81DD38ACA003E5573 /* Sky_Well_Test_Project.xcdatamodeld */; };
+		2135A7EC1DD38ACA003E5573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2135A7EB1DD38ACA003E5573 /* Assets.xcassets */; };
+		2135A7EF1DD38ACA003E5573 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2135A7ED1DD38ACA003E5573 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2135A7DE1DD38ACA003E5573 /* Sky Well Test Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sky Well Test Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2135A7E11DD38ACA003E5573 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		2135A7E31DD38ACA003E5573 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2135A7E61DD38ACA003E5573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		2135A7E91DD38ACA003E5573 /* Sky_Well_Test_Project.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sky_Well_Test_Project.xcdatamodel; sourceTree = "<group>"; };
+		2135A7EB1DD38ACA003E5573 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		2135A7EE1DD38ACA003E5573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		2135A7F01DD38ACA003E5573 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2135A7DB1DD38ACA003E5573 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2135A7D51DD38ACA003E5573 = {
+			isa = PBXGroup;
+			children = (
+				2135A7E01DD38ACA003E5573 /* Sky Well Test Project */,
+				2135A7DF1DD38ACA003E5573 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2135A7DF1DD38ACA003E5573 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2135A7DE1DD38ACA003E5573 /* Sky Well Test Project.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2135A7E01DD38ACA003E5573 /* Sky Well Test Project */ = {
+			isa = PBXGroup;
+			children = (
+				2135A7E11DD38ACA003E5573 /* AppDelegate.swift */,
+				2135A7E31DD38ACA003E5573 /* ViewController.swift */,
+				2135A7E51DD38ACA003E5573 /* Main.storyboard */,
+				2135A7EB1DD38ACA003E5573 /* Assets.xcassets */,
+				2135A7ED1DD38ACA003E5573 /* LaunchScreen.storyboard */,
+				2135A7F01DD38ACA003E5573 /* Info.plist */,
+				2135A7E81DD38ACA003E5573 /* Sky_Well_Test_Project.xcdatamodeld */,
+			);
+			path = "Sky Well Test Project";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2135A7DD1DD38ACA003E5573 /* Sky Well Test Project */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2135A7F31DD38ACA003E5573 /* Build configuration list for PBXNativeTarget "Sky Well Test Project" */;
+			buildPhases = (
+				2135A7DA1DD38ACA003E5573 /* Sources */,
+				2135A7DB1DD38ACA003E5573 /* Frameworks */,
+				2135A7DC1DD38ACA003E5573 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Sky Well Test Project";
+			productName = "Sky Well Test Project";
+			productReference = 2135A7DE1DD38ACA003E5573 /* Sky Well Test Project.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2135A7D61DD38ACA003E5573 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = JesusCodes;
+				TargetAttributes = {
+					2135A7DD1DD38ACA003E5573 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 2135A7D91DD38ACA003E5573 /* Build configuration list for PBXProject "Sky Well Test Project" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2135A7D51DD38ACA003E5573;
+			productRefGroup = 2135A7DF1DD38ACA003E5573 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2135A7DD1DD38ACA003E5573 /* Sky Well Test Project */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2135A7DC1DD38ACA003E5573 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2135A7EF1DD38ACA003E5573 /* LaunchScreen.storyboard in Resources */,
+				2135A7EC1DD38ACA003E5573 /* Assets.xcassets in Resources */,
+				2135A7E71DD38ACA003E5573 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2135A7DA1DD38ACA003E5573 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2135A7E41DD38ACA003E5573 /* ViewController.swift in Sources */,
+				2135A7EA1DD38ACA003E5573 /* Sky_Well_Test_Project.xcdatamodeld in Sources */,
+				2135A7E21DD38ACA003E5573 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		2135A7E51DD38ACA003E5573 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2135A7E61DD38ACA003E5573 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		2135A7ED1DD38ACA003E5573 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2135A7EE1DD38ACA003E5573 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2135A7F11DD38ACA003E5573 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2135A7F21DD38ACA003E5573 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		2135A7F41DD38ACA003E5573 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Sky Well Test Project/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.jesuscodes.Sky-Well-Test-Project";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		2135A7F51DD38ACA003E5573 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Sky Well Test Project/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "me.jesuscodes.Sky-Well-Test-Project";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2135A7D91DD38ACA003E5573 /* Build configuration list for PBXProject "Sky Well Test Project" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2135A7F11DD38ACA003E5573 /* Debug */,
+				2135A7F21DD38ACA003E5573 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2135A7F31DD38ACA003E5573 /* Build configuration list for PBXNativeTarget "Sky Well Test Project" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2135A7F41DD38ACA003E5573 /* Debug */,
+				2135A7F51DD38ACA003E5573 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2135A7E81DD38ACA003E5573 /* Sky_Well_Test_Project.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2135A7E91DD38ACA003E5573 /* Sky_Well_Test_Project.xcdatamodel */,
+			);
+			currentVersion = 2135A7E91DD38ACA003E5573 /* Sky_Well_Test_Project.xcdatamodel */;
+			path = Sky_Well_Test_Project.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 2135A7D61DD38ACA003E5573 /* Project object */;
+}
