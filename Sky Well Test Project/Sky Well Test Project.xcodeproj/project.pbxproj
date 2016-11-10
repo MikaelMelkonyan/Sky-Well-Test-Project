@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2135A7E21DD38ACA003E5573 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2135A7E11DD38ACA003E5573 /* AppDelegate.swift */; };
-		2135A7E41DD38ACA003E5573 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2135A7E31DD38ACA003E5573 /* ViewController.swift */; };
+		2135A7E41DD38ACA003E5573 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2135A7E31DD38ACA003E5573 /* MainViewController.swift */; };
 		2135A7E71DD38ACA003E5573 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2135A7E51DD38ACA003E5573 /* Main.storyboard */; };
 		2135A7EA1DD38ACA003E5573 /* Sky_Well_Test_Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2135A7E81DD38ACA003E5573 /* Sky_Well_Test_Project.xcdatamodeld */; };
 		2135A7EC1DD38ACA003E5573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2135A7EB1DD38ACA003E5573 /* Assets.xcassets */; };
@@ -18,7 +18,7 @@
 /* Begin PBXFileReference section */
 		2135A7DE1DD38ACA003E5573 /* Sky Well Test Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sky Well Test Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2135A7E11DD38ACA003E5573 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2135A7E31DD38ACA003E5573 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2135A7E31DD38ACA003E5573 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		2135A7E61DD38ACA003E5573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2135A7E91DD38ACA003E5573 /* Sky_Well_Test_Project.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Sky_Well_Test_Project.xcdatamodel; sourceTree = "<group>"; };
 		2135A7EB1DD38ACA003E5573 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				2135A7E11DD38ACA003E5573 /* AppDelegate.swift */,
-				2135A7E31DD38ACA003E5573 /* ViewController.swift */,
+				2135A7E31DD38ACA003E5573 /* MainViewController.swift */,
 				2135A7E51DD38ACA003E5573 /* Main.storyboard */,
 				2135A7EB1DD38ACA003E5573 /* Assets.xcassets */,
 				2135A7ED1DD38ACA003E5573 /* LaunchScreen.storyboard */,
@@ -138,7 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2135A7E41DD38ACA003E5573 /* ViewController.swift in Sources */,
+				2135A7E41DD38ACA003E5573 /* MainViewController.swift in Sources */,
 				2135A7EA1DD38ACA003E5573 /* Sky_Well_Test_Project.xcdatamodeld in Sources */,
 				2135A7E21DD38ACA003E5573 /* AppDelegate.swift in Sources */,
 			);
@@ -290,6 +290,7 @@
 				2135A7F51DD38ACA003E5573 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
