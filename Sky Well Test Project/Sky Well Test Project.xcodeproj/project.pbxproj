@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2133AA701DD518BC00098615 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2133AA6F1DD518BC00098615 /* Api.swift */; };
 		2135A7E21DD38ACA003E5573 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2135A7E11DD38ACA003E5573 /* AppDelegate.swift */; };
 		2135A7E41DD38ACA003E5573 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2135A7E31DD38ACA003E5573 /* MainViewController.swift */; };
 		2135A7E71DD38ACA003E5573 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2135A7E51DD38ACA003E5573 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2133AA6F1DD518BC00098615 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		2135A7DE1DD38ACA003E5573 /* Sky Well Test Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sky Well Test Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2135A7E11DD38ACA003E5573 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2135A7E31DD38ACA003E5573 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +60,7 @@
 			children = (
 				2135A7E11DD38ACA003E5573 /* AppDelegate.swift */,
 				2135A7E31DD38ACA003E5573 /* MainViewController.swift */,
+				2133AA6F1DD518BC00098615 /* Api.swift */,
 				2135A7E51DD38ACA003E5573 /* Main.storyboard */,
 				2135A7EB1DD38ACA003E5573 /* Assets.xcassets */,
 				2135A7ED1DD38ACA003E5573 /* LaunchScreen.storyboard */,
@@ -99,6 +102,7 @@
 				TargetAttributes = {
 					2135A7DD1DD38ACA003E5573 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = NP78NRZ4Q7;
 					};
 				};
 			};
@@ -140,6 +144,7 @@
 			files = (
 				2135A7E41DD38ACA003E5573 /* MainViewController.swift in Sources */,
 				2135A7EA1DD38ACA003E5573 /* Sky_Well_Test_Project.xcdatamodeld in Sources */,
+				2133AA701DD518BC00098615 /* Api.swift in Sources */,
 				2135A7E21DD38ACA003E5573 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -253,10 +258,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Sky Well Test Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.jesuscodes.Sky-Well-Test-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -264,10 +272,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = "Sky Well Test Project/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "me.jesuscodes.Sky-Well-Test-Project";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
