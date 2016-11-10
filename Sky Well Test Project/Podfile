@@ -3,6 +3,6 @@
 use_frameworks!
 
 target 'Sky Well Test Project' do
-	pod 'Alamofire', '~> 4.0'
+	pod 'Alamofire', ‘= 3.0’
 end
 
