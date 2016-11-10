@@ -14,6 +14,7 @@
 		2135A7EA1DD38ACA003E5573 /* Sky_Well_Test_Project.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2135A7E81DD38ACA003E5573 /* Sky_Well_Test_Project.xcdatamodeld */; };
 		2135A7EC1DD38ACA003E5573 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2135A7EB1DD38ACA003E5573 /* Assets.xcassets */; };
 		2135A7EF1DD38ACA003E5573 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2135A7ED1DD38ACA003E5573 /* LaunchScreen.storyboard */; };
+		E03D5EBF1CAC8FBF008B11DB /* Pods_Sky_Well_Test_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356CAD1FB3FCFAFF2F99C9BD /* Pods_Sky_Well_Test_Project.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,9 @@
 		2135A7EB1DD38ACA003E5573 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2135A7EE1DD38ACA003E5573 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2135A7F01DD38ACA003E5573 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29C03D74FA8A8AC3428E5F1A /* Pods-Sky Well Test Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sky Well Test Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sky Well Test Project/Pods-Sky Well Test Project.debug.xcconfig"; sourceTree = "<group>"; };
+		356CAD1FB3FCFAFF2F99C9BD /* Pods_Sky_Well_Test_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sky_Well_Test_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		759AE018FB568C415BEB207C /* Pods-Sky Well Test Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sky Well Test Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sky Well Test Project/Pods-Sky Well Test Project.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E03D5EBF1CAC8FBF008B11DB /* Pods_Sky_Well_Test_Project.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +49,8 @@
 			children = (
 				2135A7E01DD38ACA003E5573 /* Sky Well Test Project */,
 				2135A7DF1DD38ACA003E5573 /* Products */,
+				BADBD7F3093585831A66BD9A /* Pods */,
+				9651BE9821F701480EFCACB0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -70,6 +77,23 @@
 			path = "Sky Well Test Project";
 			sourceTree = "<group>";
 		};
+		9651BE9821F701480EFCACB0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				356CAD1FB3FCFAFF2F99C9BD /* Pods_Sky_Well_Test_Project.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BADBD7F3093585831A66BD9A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				29C03D74FA8A8AC3428E5F1A /* Pods-Sky Well Test Project.debug.xcconfig */,
+				759AE018FB568C415BEB207C /* Pods-Sky Well Test Project.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -77,9 +101,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2135A7F31DD38ACA003E5573 /* Build configuration list for PBXNativeTarget "Sky Well Test Project" */;
 			buildPhases = (
+				AD854136E67877BDC7F7FB52 /* [CP] Check Pods Manifest.lock */,
 				2135A7DA1DD38ACA003E5573 /* Sources */,
 				2135A7DB1DD38ACA003E5573 /* Frameworks */,
 				2135A7DC1DD38ACA003E5573 /* Resources */,
+				FF55A171B76C282F0CA2EA66 /* [CP] Embed Pods Frameworks */,
+				9A8414D43C80CD68DCEA1501 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -136,6 +163,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9A8414D43C80CD68DCEA1501 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sky Well Test Project/Pods-Sky Well Test Project-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD854136E67877BDC7F7FB52 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FF55A171B76C282F0CA2EA66 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Sky Well Test Project/Pods-Sky Well Test Project-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2135A7DA1DD38ACA003E5573 /* Sources */ = {
@@ -256,6 +331,7 @@
 		};
 		2135A7F41DD38ACA003E5573 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 29C03D74FA8A8AC3428E5F1A /* Pods-Sky Well Test Project.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
@@ -270,6 +346,7 @@
 		};
 		2135A7F51DD38ACA003E5573 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 759AE018FB568C415BEB207C /* Pods-Sky Well Test Project.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
