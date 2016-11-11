@@ -8,10 +8,11 @@
 
 import Foundation
 import Alamofire
+import ImageLoader
 
 class Api {
     
-    static func getWeather(location: (longitude: Float, latitude: Float), callback:(Float?, String?, String?, String?, NSError?)->()) {
+    static func getWeather(location: (longitude: Float, latitude: Float), callback:(Float?, String?, String?, UIImageView?, NSError?)->()) {
         Alamofire.request(.GET, "http://api.openweathermap.org/data/2.5/weather?lat=\(location.latitude)&lon=\(location.longitude)&appid=05b7c567ea8c258ed3ac44205b548310", encoding: .JSON)
             .responseJSON { response in
                 switch response.result {
@@ -27,8 +28,12 @@ class Api {
                         }
                         let main = json["main"]!!
                         let temperature: Float = main["temp"] as! Float - 273.15
+                        let weatherImageView = UIImageView()
                         ui {
-                            callback(temperature, city, weatherTitle, weatherImage, nil)
+                            print("weatherImage = \(weatherImage)")
+                            weatherImageView.load("http://openweathermap.org/img/w/\(weatherImage).png") { _ in
+                                callback(temperature, city, weatherTitle, weatherImageView, nil)
+                            }
                         }
                         
                     }

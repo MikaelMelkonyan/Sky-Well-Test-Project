@@ -45,11 +45,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         location = locations.last
         let locationTuple = (Float(location!.coordinate.longitude), Float(location!.coordinate.latitude))
         Api.getWeather(locationTuple) {
-            (temperature, city, title, iconCode, error) in
+            (temperature, city, title, icon, error) in
             if let error = error {
                 print(error)
             } else {
-                print("temperature = \(temperature)\ncity = \(city)\ntitle = \(title)\niconCode = \(iconCode)")
+                self.weatherCity.text = city
+                self.weatherDescription.text = title
+                self.weatherDegree.text = temperature > 0 ? "+\(temperature!)" : "-\(temperature!)"
+                self.weatherImage.image = icon?.image
             }
         }
     }

@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ImageLoader.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Sky Well Test Project.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +22,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>098261F84488E841E4F088BC768C44AB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>27F5B8A3E5AF54776C175E7C0D3677DF</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D9770C58F1EF96751515B1E5D131DDEE</key>
+		<key>71AD4A80DF7BB9C50163652207B079E4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
