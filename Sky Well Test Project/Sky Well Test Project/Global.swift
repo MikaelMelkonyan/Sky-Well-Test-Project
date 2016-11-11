@@ -7,7 +7,14 @@
 //
 
 import Foundation
+import UIKit
+import CoreData
 
+let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+let managedContext = appDelegate.managedObjectContext
+let weatherEntity =  NSEntityDescription.entityForName("Weather", inManagedObjectContext: managedContext)
+let weatherFetchRequest = NSFetchRequest(entityName: "Weather")
+let weatherObject = NSManagedObject(entity: weatherEntity!, insertIntoManagedObjectContext:managedContext)
 
 func ui(dispatchBlock:()->()){
     if let threadName = NSThread.currentThread().name where threadName == "main_thread" {

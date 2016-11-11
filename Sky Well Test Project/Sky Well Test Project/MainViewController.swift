@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import CoreData
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
     
@@ -22,11 +23,17 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet var weatherDescription: UILabel!
     @IBOutlet var weatherCity: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navBar = navigationController?.navigationBar
         navBar?.topItem?.title = "Car list"
+        
+        let addButton = UIButton()
+        addButton.setImage(UIImage(named: "circle-plus_32x32"), forState: .Normal)
+        addButton.frame.size.height = 20
+        addButton.frame.size.width = 20
+        addButton.addTarget(self, action: #selector(MainViewController.addCar(_:)), forControlEvents: UIControlEvents.TouchUpInside)
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: addButton)
         
         carListTableView.dataSource = self
         carListTableView.delegate = self
@@ -39,6 +46,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    func addCar(sender: AnyObject? ) {
+        print("ADD CAR")
+    }
     
     //Location delegate
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -47,13 +57,39 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         Api.getWeather(locationTuple) {
             (weather, error) in
             if let error = error {
-                print(error)
+                print("Weather getting error = \(error.localizedDescription)")
+                self.updateWeatherInfo(true)
             } else {
-                self.weatherCity.text = weather!.city
-                self.weatherDescription.text = weather!.title
-                self.weatherDegree.text = weather!.temperature > 0 ? "+\(weather!.temperature!)" : "-\(weather!.temperature!)"
-                self.weatherImage.image = weather!.icon?.image
+                weatherObject.setValue(weather!.city, forKey: "city")
+                weatherObject.setValue(weather!.title, forKey: "title")
+                weatherObject.setValue(weather!.temperature > 0 ? "+\(weather!.temperature!)" : "-\(weather!.temperature!)", forKey: "temperature")
+                let image = weather!.icon?.image
+                let imageData = NSData(data: UIImagePNGRepresentation(image!)!)
+                weatherObject.setValue(imageData, forKey: "image")
+                
+                do {
+                    try managedContext.save()
+                } catch {
+                }
+                self.updateWeatherInfo(false)
             }
+        }
+    }
+    
+    func updateWeatherInfo(error: Bool) {
+        do {
+            let resultsObject = try managedContext.executeFetchRequest(weatherFetchRequest).last
+            self.weatherDescription.text = resultsObject?.valueForKey("title") as? String
+            self.weatherCity.text = resultsObject?.valueForKey("city") as? String
+            self.weatherDegree.text = resultsObject?.valueForKey("temperature") as? String
+            if let data = resultsObject?.valueForKey("image") as? NSData {
+                self.weatherImage.image = UIImage(data: data)
+            }
+        } catch {
+            self.weatherDescription.text = "Some problems"
+        }
+        if error {
+            self.weatherDescription.text = "Some problems"
         }
     }
     
