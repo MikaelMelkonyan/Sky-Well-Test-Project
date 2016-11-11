@@ -44,7 +44,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         location = locations.last
         let locationTuple = (Float(location!.coordinate.longitude), Float(location!.coordinate.latitude))
-        Api.getWeather(locationTuple)
+        Api.getWeather(locationTuple) {
+            (temperature, city, title, iconCode, error) in
+            if let error = error {
+                print(error)
+            } else {
+                print("temperature = \(temperature)\ncity = \(city)\ntitle = \(title)\niconCode = \(iconCode)")
+            }
+        }
     }
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {

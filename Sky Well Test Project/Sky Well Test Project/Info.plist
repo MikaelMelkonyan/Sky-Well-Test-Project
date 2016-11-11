@@ -40,5 +40,10 @@
 	<string>Your location is used to get weather for your city.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Your location is used to get weather for your city.</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
