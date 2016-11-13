@@ -37,9 +37,15 @@ class AddCarVIewController: UIViewController, UIPickerViewDelegate, UIPickerView
         transmission.text = "Transmission: \(transmissionCases.first!)"
         condition.text = "Condition: \(conditionCases.first!)"
         
-        createPicker(engine)
-        createPicker(transmission)
-        createPicker(condition)
+        createPickerView(engine)
+        createPickerView(transmission)
+        createPickerView(condition)
+        model.inputAccessoryView = createTollbar()
+        price.inputAccessoryView = createTollbar()
+        engine.inputAccessoryView = createTollbar()
+        transmission.inputAccessoryView = createTollbar()
+        condition.inputAccessoryView = createTollbar()
+        longDescription.inputAccessoryView = createTollbar()
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -85,7 +91,19 @@ class AddCarVIewController: UIViewController, UIPickerViewDelegate, UIPickerView
         }
     }
     
-    func createPicker(sender: UITextField){
+    func createTollbar() -> UIToolbar {
+        let toolBar = UIToolbar()
+        toolBar.tintColor = UIColor(red: 39/255, green: 184/255, blue: 141/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(AddCarVIewController.donePicker))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        toolBar.setItems([spaceButton, doneButton], animated: false)
+        toolBar.userInteractionEnabled = true
+        return toolBar
+    }
+    
+    func createPickerView(sender: UITextField) {
         sender.inputView = nil
         
         let newPickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 150))
@@ -93,22 +111,11 @@ class AddCarVIewController: UIViewController, UIPickerViewDelegate, UIPickerView
         newPickerView.delegate = self
         newPickerView.dataSource = self
         
-        let toolBar = UIToolbar()
-        toolBar.tintColor = UIColor(red: 39/255, green: 184/255, blue: 141/255, alpha: 1)
-        toolBar.sizeToFit()
-        
-        //Create buttons
-        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(AddCarVIewController.donePicker))
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
-        toolBar.setItems([spaceButton, doneButton], animated: false)
-        toolBar.userInteractionEnabled = true
-        
         sender.inputView = newPickerView
-        sender.inputAccessoryView = toolBar
     }
     
     func donePicker() {
-        currentTextField.resignFirstResponder()
+        view.endEditing(true)
     }
     
     @IBAction func textFieldEditingBeginned(sender: UITextField) {
