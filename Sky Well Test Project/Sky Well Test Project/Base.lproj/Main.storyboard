@@ -26,6 +26,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="updateAddCarAction:" destination="0GD-4s-LWI" eventType="editingDidEnd" id="bxp-Wh-JPg"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price, $" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hF0-pe-QBJ">
                                 <rect key="frame" x="20" y="185" width="560" height="30"/>
@@ -34,6 +37,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <action selector="updateAddCarAction:" destination="0GD-4s-LWI" eventType="editingDidEnd" id="xik-Od-XFb"/>
+                                </connections>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DCe-et-hL8">
                                 <rect key="frame" x="20" y="245" width="560" height="30"/>
@@ -169,9 +175,13 @@
                     <navigationItem key="navigationItem" id="a71-zn-dyh">
                         <barButtonItem key="rightBarButtonItem" title="Add car" id="pxA-ID-cz8">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <action selector="addCar:" destination="0GD-4s-LWI" id="zWX-5P-6CG"/>
+                            </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addCarButton" destination="pxA-ID-cz8" id="L0b-e6-eRJ"/>
                         <outlet property="condition" destination="b7E-jd-azU" id="EZD-dz-0xx"/>
                         <outlet property="engine" destination="DCe-et-hL8" id="xJg-sV-YX6"/>
                         <outlet property="imagesCollectionView" destination="bWu-8J-yLw" id="stN-uq-373"/>

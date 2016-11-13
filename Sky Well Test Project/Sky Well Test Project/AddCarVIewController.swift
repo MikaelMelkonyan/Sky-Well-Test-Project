@@ -13,8 +13,9 @@ class AddCarVIewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     var currentTextField = UITextField()
     let imagePicker = UIImagePickerController()
-    
-    var images: [UIImage] = []
+    var car = Car()
+    var addCarButtonIsClickable = false
+    @IBOutlet var addCarButton: UIBarButtonItem!
     
     let engineCases = ["inline", "straight", "vee", "flat"]
     let transmissionCases = ["manual", "automate"]
@@ -50,6 +51,8 @@ class AddCarVIewController: UIViewController, UIPickerViewDelegate, UIPickerView
         imagePicker.delegate = self
         imagesCollectionView.delegate = self
         imagesCollectionView.dataSource = self
+        
+        updateAddCarButtonClickable()
     }
     
     //UIImagePicker and UICollectionView Delegate
@@ -61,20 +64,24 @@ class AddCarVIewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
-            images.append(pickedImage)
+            if car.images == nil {
+                car.images = []
+            }
+            car.images!.append(pickedImage)
         }
         
         dismissViewControllerAnimated(true) {
             self.imagesCollectionView.reloadData()
+            self.updateAddCarButtonClickable()
         }
     }
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
+        return car.images == nil ? 0 : car.images!.count
     }
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ImagesCollectionViewCell", forIndexPath: indexPath) as! ImagesCollectionViewCell
-        if images.count > 0 {
-            cell.carImage.image = images[indexPath.row]
+        if car.images != nil && car.images!.count > 0 {
+            cell.carImage.image = car.images![indexPath.row]
         }
         return cell
     }
@@ -89,7 +96,12 @@ class AddCarVIewController: UIViewController, UIPickerViewDelegate, UIPickerView
     func textViewDidEndEditing(textView: UITextView) {
         if longDescription.text == "" {
             longDescription.text = "Description..."
+            car.longDescription = nil
+        } else {
+            car.longDescription = longDescription.text
         }
+        
+        updateAddCarButtonClickable()
     }
     
     // PickerView Delegate
@@ -97,6 +109,10 @@ class AddCarVIewController: UIViewController, UIPickerViewDelegate, UIPickerView
         engine.text = "Engine: \(engineCases.first!)"
         transmission.text = "Transmission: \(transmissionCases.first!)"
         condition.text = "Condition: \(conditionCases.first!)"
+        
+        car.engine = engineCases.first
+        car.transmission = transmissionCases.first
+        car.condition = conditionCases.first
         
         createPickerView(engine)
         createPickerView(transmission)
@@ -136,14 +152,18 @@ class AddCarVIewController: UIViewController, UIPickerViewDelegate, UIPickerView
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch currentTextField {
         case engine:
+            car.engine = engineCases[row]
             engine.text = "Engine: \(engineCases[row])"
         case transmission:
+            car.transmission = transmissionCases[row]
             transmission.text = "Transmission: \(transmissionCases[row])"
         case condition:
+            car.condition = conditionCases[row]
             condition.text = "Condition: \(conditionCases[row])"
         default:
             break
         }
+        updateAddCarButtonClickable()
     }
     
     func createTollbar() -> UIToolbar {
@@ -177,6 +197,34 @@ class AddCarVIewController: UIViewController, UIPickerViewDelegate, UIPickerView
         currentTextField = sender
     }
     
+    //Add car action
+    @IBAction func addCar(sender: UIBarButtonItem) {
+        
+    }
+    
+    
+    @IBAction func updateAddCarAction(sender: UITextField) {
+        switch sender {
+        case model:
+            car.model = sender.text != "" ? sender.text : nil
+        case price:
+            car.price = sender.text != "" ? Int(sender.text!) : nil
+        default:
+            break
+        }
+        updateAddCarButtonClickable()
+    }
+    
+    func updateAddCarButtonClickable() {
+        if (car.condition == nil) || (car.engine == nil) || (car.images == nil) || (car.longDescription == nil) || (car.model == nil) || (car.price == nil) || (car.transmission == nil) {
+            addCarButtonIsClickable = false
+            addCarButton.tintColor = UIColor.darkGrayColor()
+        } else {
+            addCarButtonIsClickable = true
+            addCarButton.tintColor = UIColor.whiteColor()
+        }
+        print(addCarButtonIsClickable)
+    }
     
 }
 
