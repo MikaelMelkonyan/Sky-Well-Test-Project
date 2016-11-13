@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		212B50B71DD88891001FCC91 /* AddCarVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 212B50B61DD88891001FCC91 /* AddCarVIewController.swift */; };
 		2133AA701DD518BC00098615 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2133AA6F1DD518BC00098615 /* Api.swift */; };
 		2135A7E21DD38ACA003E5573 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2135A7E11DD38ACA003E5573 /* AppDelegate.swift */; };
 		2135A7E41DD38ACA003E5573 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2135A7E31DD38ACA003E5573 /* MainViewController.swift */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		212B50B61DD88891001FCC91 /* AddCarVIewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddCarVIewController.swift; sourceTree = "<group>"; };
 		2133AA6F1DD518BC00098615 /* Api.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
 		2135A7DE1DD38ACA003E5573 /* Sky Well Test Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sky Well Test Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2135A7E11DD38ACA003E5573 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 				21A25E151DD5E50900932762 /* Weather.swift */,
 				2133AA6F1DD518BC00098615 /* Api.swift */,
 				21E567A01DD54B3D00DBD8FD /* Global.swift */,
+				212B50B61DD88891001FCC91 /* AddCarVIewController.swift */,
 				2135A7E51DD38ACA003E5573 /* Main.storyboard */,
 				2135A7EB1DD38ACA003E5573 /* Assets.xcassets */,
 				2135A7ED1DD38ACA003E5573 /* LaunchScreen.storyboard */,
@@ -228,6 +231,7 @@
 				2133AA701DD518BC00098615 /* Api.swift in Sources */,
 				21E567A11DD54B3D00DBD8FD /* Global.swift in Sources */,
 				21A25E161DD5E50900932762 /* Weather.swift in Sources */,
+				212B50B71DD88891001FCC91 /* AddCarVIewController.swift in Sources */,
 				2135A7E21DD38ACA003E5573 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

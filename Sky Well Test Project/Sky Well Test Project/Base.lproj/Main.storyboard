@@ -6,6 +6,24 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Add CarV Iew Controller-->
+        <scene sceneID="gZj-Zc-oPA">
+            <objects>
+                <viewController storyboardIdentifier="AddCarVIewController" id="0GD-4s-LWI" customClass="AddCarVIewController" customModule="Sky_Well_Test_Project" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="30h-2S-OVV"/>
+                        <viewControllerLayoutGuide type="bottom" id="ux5-jd-Inz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hNy-Hk-Uma">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Uzw-39-dHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1848" y="331"/>
+        </scene>
         <!--Main View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -121,9 +139,17 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="j34-Ip-6uo"/>
+                    <navigationItem key="navigationItem" id="j34-Ip-6uo">
+                        <barButtonItem key="rightBarButtonItem" title="Add car" id="gWS-Ge-5Rb">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <connections>
+                                <segue destination="0GD-4s-LWI" kind="show" id="GVP-fC-TUO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="addCarButton" destination="gWS-Ge-5Rb" id="VyA-b1-F7T"/>
                         <outlet property="carListTableView" destination="ik3-u3-S4J" id="myq-EY-UWD"/>
                         <outlet property="weatherCity" destination="RNP-fG-SRB" id="QIA-y0-qOE"/>
                         <outlet property="weatherDegree" destination="4ti-Wj-UJZ" id="Ldg-Eu-b9d"/>

@@ -22,6 +22,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet var weatherImage: UIImageView!
     @IBOutlet var weatherDescription: UILabel!
     @IBOutlet var weatherCity: UILabel!
+    @IBOutlet var addCarButton: UIBarButtonItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +34,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         addButton.frame.size.height = 20
         addButton.frame.size.width = 20
         addButton.addTarget(self, action: #selector(MainViewController.addCar(_:)), forControlEvents: UIControlEvents.TouchUpInside)
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: addButton)
+        addCarButton.customView = addButton
         
         carListTableView.dataSource = self
         carListTableView.delegate = self
@@ -47,7 +48,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func addCar(sender: AnyObject? ) {
-        print("ADD CAR")
+        let addCarViewController = navigationController?.storyboard?.instantiateViewControllerWithIdentifier("AddCarVIewController") as! AddCarVIewController
+        navigationController?.pushViewController(addCarViewController, animated: true)
     }
     
     //Location delegate
@@ -95,6 +97,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func locationManager(manager: CLLocationManager, didFailWithError error: NSError) {
         print("Error: " + error.localizedDescription)
+        self.weatherDescription.text = "Some problems"
     }
     
     //TableView delegate

@@ -17,13 +17,26 @@ let weatherFetchRequest = NSFetchRequest(entityName: "Weather")
 let weatherObject = NSManagedObject(entity: weatherEntity!, insertIntoManagedObjectContext:managedContext)
 
 func ui(dispatchBlock:()->()){
-    if let threadName = NSThread.currentThread().name where threadName == "main_thread" {
-        dispatchBlock()
-    } else {
-        dispatch_async(dispatch_get_main_queue(), dispatchBlock)
-    }
+    dispatchBlock()
 }
 
 func post(dispatchBlock:()->()){
     dispatch_async(dispatch_get_main_queue(), dispatchBlock)
+}
+
+enum Engine {
+    case inline
+    case straight
+    case vee
+    case flat
+}
+
+enum Transmission {
+    case manual
+    case automate
+}
+
+enum Condition {
+    case good
+    case bad
 }
