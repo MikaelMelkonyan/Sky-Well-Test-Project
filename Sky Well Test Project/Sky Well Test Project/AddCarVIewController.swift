@@ -9,9 +9,16 @@
 import Foundation
 import UIKit
 
-class AddCarVIewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AddCarVIewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
     var currentTextField = UITextField()
+    let imagePicker = UIImagePickerController()
+    
+    var images: [UIImage] = []
+    
+    let engineCases = ["inline", "straight", "vee", "flat"]
+    let transmissionCases = ["manual", "automate"]
+    let conditionCases = ["good", "bad"]
     
     @IBOutlet var model: UITextField!
     @IBOutlet var price: UITextField!
@@ -20,15 +27,69 @@ class AddCarVIewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet var condition: UITextField!
     @IBOutlet var longDescription: UITextView!
     
-    let engineCases = ["inline", "straight", "vee", "flat"]
-    let transmissionCases = ["manual", "automate"]
-    let conditionCases = ["good", "bad"]
+    @IBOutlet var imagesCollectionView: UICollectionView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationController?.navigationBar.tintColor = UIColor.whiteColor()
         setPickerViews()
+        model.inputAccessoryView = createTollbar()
+        price.inputAccessoryView = createTollbar()
+        engine.inputAccessoryView = createTollbar()
+        transmission.inputAccessoryView = createTollbar()
+        condition.inputAccessoryView = createTollbar()
+        longDescription.inputAccessoryView = createTollbar()
+        
+        longDescription.delegate = self
+        model.placeholder = "Car model"
+        price.placeholder = "Price, $"
+        longDescription.text = "Description..."
+        
+        imagePicker.delegate = self
+        imagesCollectionView.delegate = self
+        imagesCollectionView.dataSource = self
+    }
+    
+    //UIImagePicker and UICollectionView Delegate
+    @IBAction func addCarPhoto(sender: UIButton) {
+        imagePicker.allowsEditing = false
+        imagePicker.sourceType = .PhotoLibrary
+        
+        presentViewController(imagePicker, animated: true, completion: nil)
+    }
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
+        if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            images.append(pickedImage)
+        }
+        
+        dismissViewControllerAnimated(true) {
+            self.imagesCollectionView.reloadData()
+        }
+    }
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return images.count
+    }
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("ImagesCollectionViewCell", forIndexPath: indexPath) as! ImagesCollectionViewCell
+        if images.count > 0 {
+            cell.carImage.image = images[indexPath.row]
+        }
+        return cell
+    }
+    
+    //UITextView Delegate
+    func textViewDidBeginEditing(textView: UITextView) {
+        if longDescription.text == "Description..." {
+            longDescription.text = ""
+        }
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        if longDescription.text == "" {
+            longDescription.text = "Description..."
+        }
     }
     
     // PickerView Delegate
@@ -40,12 +101,6 @@ class AddCarVIewController: UIViewController, UIPickerViewDelegate, UIPickerView
         createPickerView(engine)
         createPickerView(transmission)
         createPickerView(condition)
-        model.inputAccessoryView = createTollbar()
-        price.inputAccessoryView = createTollbar()
-        engine.inputAccessoryView = createTollbar()
-        transmission.inputAccessoryView = createTollbar()
-        condition.inputAccessoryView = createTollbar()
-        longDescription.inputAccessoryView = createTollbar()
     }
     
     func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
@@ -123,6 +178,10 @@ class AddCarVIewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     
     
+}
+
+class ImagesCollectionViewCell: UICollectionViewCell {
+    @IBOutlet var carImage: UIImageView!
 }
 
 class Car: NSObject {
