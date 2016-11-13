@@ -23,20 +23,3 @@ func ui(dispatchBlock:()->()){
 func post(dispatchBlock:()->()){
     dispatch_async(dispatch_get_main_queue(), dispatchBlock)
 }
-
-enum Engine {
-    case inline
-    case straight
-    case vee
-    case flat
-}
-
-enum Transmission {
-    case manual
-    case automate
-}
-
-enum Condition {
-    case good
-    case bad
-}
