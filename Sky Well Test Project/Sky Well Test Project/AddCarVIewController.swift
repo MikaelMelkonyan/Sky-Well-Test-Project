@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class AddCarVIewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UICollectionViewDelegate, UICollectionViewDataSource {
     
@@ -57,10 +58,12 @@ class AddCarVIewController: UIViewController, UIPickerViewDelegate, UIPickerView
     
     //UIImagePicker and UICollectionView Delegate
     @IBAction func addCarPhoto(sender: UIButton) {
-        imagePicker.allowsEditing = false
-        imagePicker.sourceType = .PhotoLibrary
-        
-        presentViewController(imagePicker, animated: true, completion: nil)
+        if car.images?.count < 10 {
+            imagePicker.allowsEditing = false
+            imagePicker.sourceType = .PhotoLibrary
+            
+            presentViewController(imagePicker, animated: true, completion: nil)
+        }
     }
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
@@ -200,6 +203,28 @@ class AddCarVIewController: UIViewController, UIPickerViewDelegate, UIPickerView
     //Add car action
     @IBAction func addCar(sender: UIBarButtonItem) {
         
+        updateAddCarButtonClickable()
+        if addCarButtonIsClickable {
+            carsObject.setValue(self.car.longDescription, forKey: "longDescription")
+            carsObject.setValue(self.car.condition, forKey: "condition")
+            carsObject.setValue(self.car.engine, forKey: "engine")
+            carsObject.setValue(self.car.model, forKey: "model")
+            carsObject.setValue(self.car.price, forKey: "price")
+            carsObject.setValue(self.car.transmission, forKey: "transmission")
+            
+            for index in 0...self.car.images!.count - 1 {
+                let image = self.car.images![index]
+                let imageData = NSData(data: UIImagePNGRepresentation(image)!)
+                carsObject.setValue(imageData, forKey: "carImage_\(index)")
+            }
+            carsObject.setValue(self.car.images!.count, forKey: "imagesCount")
+            
+            do {
+                try managedContext.save()
+            } catch {
+            }
+            navigationController?.popViewControllerAnimated(true)
+        }
     }
     
     
@@ -223,7 +248,6 @@ class AddCarVIewController: UIViewController, UIPickerViewDelegate, UIPickerView
             addCarButtonIsClickable = true
             addCarButton.tintColor = UIColor.whiteColor()
         }
-        print(addCarButtonIsClickable)
     }
     
 }

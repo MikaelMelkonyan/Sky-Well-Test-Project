@@ -1,5 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15A284" minimumToolsVersion="Automatic">
+    <entity name="Cars" syncable="YES">
+        <attribute name="carImage_0" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="carImage_1" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="carImage_2" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="carImage_3" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="carImage_4" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="carImage_5" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="carImage_6" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="carImage_7" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="carImage_8" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="carImage_9" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="condition" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="engine" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="imagesCount" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="longDescription" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="model" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="transmission" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
     <entity name="Weather" syncable="YES">
         <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
@@ -8,5 +27,6 @@
     </entity>
     <elements>
         <element name="Weather" positionX="-63" positionY="-18" width="128" height="105"/>
+        <element name="Cars" positionX="-63" positionY="9" width="128" height="300"/>
     </elements>
 </model>

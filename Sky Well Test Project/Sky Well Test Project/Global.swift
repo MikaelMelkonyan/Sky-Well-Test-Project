@@ -12,9 +12,14 @@ import CoreData
 
 let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
 let managedContext = appDelegate.managedObjectContext
+
 let weatherEntity =  NSEntityDescription.entityForName("Weather", inManagedObjectContext: managedContext)
 let weatherFetchRequest = NSFetchRequest(entityName: "Weather")
 let weatherObject = NSManagedObject(entity: weatherEntity!, insertIntoManagedObjectContext:managedContext)
+
+let carsEntity =  NSEntityDescription.entityForName("Cars", inManagedObjectContext: managedContext)
+let carsFetchRequest = NSFetchRequest(entityName: "Cars")
+let carsObject = NSManagedObject(entity: carsEntity!, insertIntoManagedObjectContext:managedContext)
 
 func ui(dispatchBlock:()->()){
     dispatchBlock()

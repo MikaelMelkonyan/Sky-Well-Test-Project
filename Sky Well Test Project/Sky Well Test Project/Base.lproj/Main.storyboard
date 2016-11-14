@@ -275,26 +275,54 @@
                                     <constraint firstAttribute="height" constant="150" id="tf6-fP-Dfr"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ik3-u3-S4J">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="53" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ik3-u3-S4J">
                                 <rect key="frame" x="0.0" y="150" width="600" height="342"/>
                                 <color key="backgroundColor" red="0.088753543794155121" green="0.7107967734336853" blue="0.55298954248428345" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CarListCell" id="LBh-nc-wgh" customClass="CarListCell" customModule="Sky_Well_Test_Project" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CarListCell" rowHeight="60" id="LBh-nc-wgh" customClass="CarListCell" customModule="Sky_Well_Test_Project" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LBh-nc-wgh" id="fYJ-LK-Hhm">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dem-7L-bET">
-                                                    <rect key="frame" x="8" y="8" width="42" height="21"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XeY-fX-AFW">
+                                                    <rect key="frame" x="0.0" y="5" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="fWW-OL-Vdw"/>
+                                                        <constraint firstAttribute="width" constant="50" id="tHy-hM-Fzc"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Car:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="OiM-g5-coU">
+                                                    <rect key="frame" x="60" y="3" width="500" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hdq-9S-aM5">
+                                                    <rect key="frame" x="60" y="35" width="500" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="XeY-fX-AFW" firstAttribute="centerY" secondItem="fYJ-LK-Hhm" secondAttribute="centerY" id="4e6-RM-TZx"/>
+                                                <constraint firstItem="XeY-fX-AFW" firstAttribute="leading" secondItem="fYJ-LK-Hhm" secondAttribute="leading" id="EcO-5F-gDh"/>
+                                                <constraint firstAttribute="bottom" secondItem="Hdq-9S-aM5" secondAttribute="bottom" constant="3" id="L5V-Ot-Ly5"/>
+                                                <constraint firstItem="OiM-g5-coU" firstAttribute="top" secondItem="fYJ-LK-Hhm" secondAttribute="top" constant="3" id="QYQ-Rg-YAg"/>
+                                                <constraint firstItem="OiM-g5-coU" firstAttribute="leading" secondItem="XeY-fX-AFW" secondAttribute="trailing" constant="10" id="W0B-mq-q6h"/>
+                                                <constraint firstItem="Hdq-9S-aM5" firstAttribute="leading" secondItem="XeY-fX-AFW" secondAttribute="trailing" constant="10" id="cFa-uQ-wPA"/>
+                                                <constraint firstAttribute="trailing" secondItem="Hdq-9S-aM5" secondAttribute="trailing" constant="40" id="e9d-td-IT1"/>
+                                                <constraint firstAttribute="trailing" secondItem="OiM-g5-coU" secondAttribute="trailing" constant="40" id="uJ3-eV-LKM"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.088753543794155121" green="0.7107967734336853" blue="0.55298954248428345" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <connections>
+                                            <outlet property="carImage" destination="XeY-fX-AFW" id="DEa-cO-ZE9"/>
+                                            <outlet property="model" destination="OiM-g5-coU" id="ddX-fc-sjb"/>
+                                            <outlet property="price" destination="Hdq-9S-aM5" id="U4R-7r-B2L"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

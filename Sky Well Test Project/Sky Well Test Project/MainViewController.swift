@@ -17,6 +17,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var locationManager = CLLocationManager()
     var location: CLLocation?
+    var cars: [Car] = []
     
     @IBOutlet var weatherDegree: UILabel!
     @IBOutlet var weatherImage: UIImageView!
@@ -44,6 +45,35 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         if CLLocationManager.locationServicesEnabled() {
             locationManager.desiredAccuracy = kCLLocationAccuracyHundredMeters
             locationManager.requestLocation()
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        do {
+            let resultsObject = try managedContext.executeFetchRequest(carsFetchRequest)
+            cars = []
+            for car in resultsObject {
+                let carInArray = Car()
+                carInArray.condition = car.valueForKey("condition") as? String
+                carInArray.engine = car.valueForKey("engine") as? String
+                carInArray.longDescription = car.valueForKey("longDescription") as? String
+                carInArray.model = car.valueForKey("model") as? String
+                carInArray.price = car.valueForKey("price") as? Int
+                carInArray.transmission = car.valueForKey("transmission") as? String
+                let imagesCount = car.valueForKey("imagesCount") as? Int
+                for index in 0...imagesCount! {
+                    if let data = car.valueForKey("carImage_\(index)") as? NSData {
+                        if carInArray.images == nil {
+                            carInArray.images = []
+                        }
+                        carInArray.images?.append(UIImage(data: data)!)
+                    }
+                }
+                cars.append(carInArray)
+            }
+            self.carListTableView.reloadData()
+        } catch {
+            print("Some error in Core Data")
         }
     }
     
@@ -103,15 +133,24 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     //TableView delegate
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("CarListCell", forIndexPath: indexPath) as! CarListCell
+        if cars.count > 0 {
+            cell.model.text = "Car: \(cars[indexPath.row].model!)"
+            cell.price.text = "Price: \(cars[indexPath.row].price!)$"
+            cell.carImage?.image = cars[indexPath.row].images![0]
+        }
         return cell
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return cars.count
     }
     
 }
 
 class CarListCell: UITableViewCell {
+    
+    @IBOutlet var carImage: UIImageView!
+    @IBOutlet var model: UILabel!
+    @IBOutlet var price: UILabel!
     
 }
