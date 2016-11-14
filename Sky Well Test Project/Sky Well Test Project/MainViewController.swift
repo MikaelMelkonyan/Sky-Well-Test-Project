@@ -145,6 +145,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cars.count
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let carInfoViewController = navigationController?.storyboard?.instantiateViewControllerWithIdentifier("CarInfoViewController") as! CarInfoViewController
+        carInfoViewController.car = cars[indexPath.row]
+        navigationController?.pushViewController(carInfoViewController, animated: true)
+    }
+    
 }
 
 class CarListCell: UITableViewCell {

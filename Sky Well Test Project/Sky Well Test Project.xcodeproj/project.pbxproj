@@ -17,6 +17,7 @@
 		2135A7EF1DD38ACA003E5573 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2135A7ED1DD38ACA003E5573 /* LaunchScreen.storyboard */; };
 		21A25E161DD5E50900932762 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21A25E151DD5E50900932762 /* Weather.swift */; };
 		21E567A11DD54B3D00DBD8FD /* Global.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E567A01DD54B3D00DBD8FD /* Global.swift */; };
+		21F577B31DD93B490069921B /* CarInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21F577B21DD93B490069921B /* CarInfoViewController.swift */; };
 		E03D5EBF1CAC8FBF008B11DB /* Pods_Sky_Well_Test_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 356CAD1FB3FCFAFF2F99C9BD /* Pods_Sky_Well_Test_Project.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		2135A7F01DD38ACA003E5573 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		21A25E151DD5E50900932762 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		21E567A01DD54B3D00DBD8FD /* Global.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Global.swift; sourceTree = "<group>"; };
+		21F577B21DD93B490069921B /* CarInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarInfoViewController.swift; sourceTree = "<group>"; };
 		29C03D74FA8A8AC3428E5F1A /* Pods-Sky Well Test Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sky Well Test Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Sky Well Test Project/Pods-Sky Well Test Project.debug.xcconfig"; sourceTree = "<group>"; };
 		356CAD1FB3FCFAFF2F99C9BD /* Pods_Sky_Well_Test_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sky_Well_Test_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		759AE018FB568C415BEB207C /* Pods-Sky Well Test Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sky Well Test Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Sky Well Test Project/Pods-Sky Well Test Project.release.xcconfig"; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				2133AA6F1DD518BC00098615 /* Api.swift */,
 				21E567A01DD54B3D00DBD8FD /* Global.swift */,
 				212B50B61DD88891001FCC91 /* AddCarVIewController.swift */,
+				21F577B21DD93B490069921B /* CarInfoViewController.swift */,
 				2135A7E51DD38ACA003E5573 /* Main.storyboard */,
 				2135A7EB1DD38ACA003E5573 /* Assets.xcassets */,
 				2135A7ED1DD38ACA003E5573 /* LaunchScreen.storyboard */,
@@ -233,6 +236,7 @@
 				21A25E161DD5E50900932762 /* Weather.swift in Sources */,
 				212B50B71DD88891001FCC91 /* AddCarVIewController.swift in Sources */,
 				2135A7E21DD38ACA003E5573 /* AppDelegate.swift in Sources */,
+				21F577B31DD93B490069921B /* CarInfoViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
