@@ -61,7 +61,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                 carInArray.price = car.valueForKey("price") as? Int
                 carInArray.transmission = car.valueForKey("transmission") as? String
                 let imagesCount = car.valueForKey("imagesCount") as? Int
-                for index in 0...imagesCount! {
+                for index in 0...imagesCount! - 1 {
                     if let data = car.valueForKey("carImage_\(index)") as? NSData {
                         if carInArray.images == nil {
                             carInArray.images = []
